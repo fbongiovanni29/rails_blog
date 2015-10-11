@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
+  get 'home/index'
+
   get '/login' => 'sessions#new'
 
   post '/login' => 'sessions#create'
 
-  delete '/logout' => 'sessions#destroy'
+  get '/logout' => 'sessions#destroy'
 
-  get 'sessions/create'
+  get '/home' => 'users#index'
 
-  get 'sessions/destroy'
-
-  get '/' => 'users#index'
+  get '/' => 'home#index'
 
   get '/signup' =>  'users#new'
 

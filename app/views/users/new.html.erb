@@ -1,6 +1,6 @@
-<%= form_for @user, :url => users_path, :html => { :multipart => true } do |f| %>
-	Email: <%= f.email_field :email %>
-	Password: <%= f.password_field :password %>
-	Name: <%= f.text_field :name %>
-	<%= f.submit "Submit" %>
+<%= form_for @user, :url => users_path, :html => { :multipart => true } do |form| %>
+	Email: <%= form.email_field :email %>
+	Password: <%= form.password_field :password %>
+	Name: <%= form.text_field :name %>
+	<%= form.submit "Submit" %>
 <% end %>
