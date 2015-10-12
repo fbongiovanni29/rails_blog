@@ -1,1 +1,4 @@
-WELCOME
+WELCOME <%= session[:user_id] %>
+
+<%= link_to 'signup', signup_path %>
+<%= link_to 'login', login_path %>

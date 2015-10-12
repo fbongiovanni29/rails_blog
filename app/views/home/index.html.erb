@@ -1,3 +1,5 @@
 <h1>WELCOME TO MY BLOG</h1>
-<%= link_to_if(@user.nil?, "Login", { controller: "sessions", action: "new" }) %>
+<%= link_to "LOGOUT", logout_path %>
+
 <%= @user.name %>
+
