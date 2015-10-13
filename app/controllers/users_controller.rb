@@ -8,7 +8,16 @@ class UsersController < ApplicationController
   end
 
   def show
-	@user = User.find(params[:id])
+#	@user = User.find(params[:id])
+#	@posts = @user.posts.all
+#	@post = Post.new
+#	@current_user = User.find(session[:user_id])
+        post = Post.new(posts_params.merge(user_id: current_user.id))
+	        if post.save
+			redirect_to '/'
+	        else
+	                redirect_to new_post_path
+	        end
   end
 
   def create
@@ -21,6 +30,8 @@ class UsersController < ApplicationController
       redirect_to '/users/new' 
     end
   end
+
+  private
 
   def user_params
 	params.require(:user).permit(:email, :password, :name, :avatar)

@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  get 'home/index'
-
   get '/login' => 'sessions#new'
 
   post '/login' => 'sessions#create'
+
+  get '/post' => 'posts#new'
+
+  post '/post' => 'posts#create'
 
   get '/logout' => 'sessions#destroy'
 
